@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const detalle = document.createElement("div");
         detalle.classList.add("rose");
 
-        const detalles = ["🌸", "💮", "🤍", "✨"];
+        const detalles = ["🌸", "💮", "❤️", "✨"];
         detalle.textContent = detalles[Math.floor(Math.random() * detalles.length)];
 
         detalle.style.left = Math.random() * 100 + "vw";
@@ -66,5 +66,6 @@ document.addEventListener("DOMContentLoaded", () => {
     setInterval(mostrarSaludo, 20000);
 
 });
+
 
 
