@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const minutos = Math.floor((diff / (1000 * 60)) % 60);
 
         counter.textContent =
-            `${dias} días • ${horas} h • ${minutos} min compartidos 🤍`;
+            `${dias} días • ${horas} h • ${minutos} min compartidos ❤️`;
     }
 
     actualizarTiempo();
@@ -66,4 +66,5 @@ document.addEventListener("DOMContentLoaded", () => {
     setInterval(mostrarSaludo, 20000);
 
 });
+
 
