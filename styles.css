@@ -13,21 +13,23 @@
 ========================= */
 body {
     background: linear-gradient(135deg, #fff1f5, #ffe3ea);
-    height: 100vh;
+    min-height: 100svh;              /* 👈 FIX real para móviles */
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
+    overflow-x: hidden;
+    padding: 16px;                   /* evita que se vea pegado */
 }
 
 /* =========================
    TARJETA MINIMAL COREANA
 ========================= */
 .card {
-    background: rgba(255, 255, 255, 0.95);
-    width: 320px;
-    padding: 30px 24px;
-    border-radius: 28px;
+    background: rgba(255, 255, 255, 0.96);
+    width: 100%;
+    max-width: 380px;
+    padding: 32px 24px;
+    border-radius: 32px;
     text-align: center;
     box-shadow: 0 18px 36px rgba(0, 0, 0, 0.08);
     animation: entrada 0.8s ease-out;
@@ -46,11 +48,11 @@ body {
 }
 
 /* =========================
-   SVG (DETALLE TIERNO)
+   HELLO KITTY PRINCIPAL
 ========================= */
 .kitty-svg {
-    width: 130px;
-    margin: 0 auto 14px;
+    width: 160px;
+    margin: 0 auto 18px;
     animation: flotar 4s ease-in-out infinite;
 }
 
@@ -60,51 +62,46 @@ body {
 }
 
 @keyframes flotar {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-6px);
-    }
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
 }
 
 /* =========================
-   TEXTOS K-STYLE
+   TEXTOS
 ========================= */
 h1 {
     color: #ff7fa6;
-    font-size: 1.35rem;
+    font-size: 1.5rem;
     font-weight: 600;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 }
 
 p {
     color: #b5b1b1;
-    font-size: 0.95rem;
+    font-size: 1rem;
     line-height: 1.6;
 }
 
 /* FRASE ESPECIAL */
 .frase {
-    margin: 16px 0 18px;
-    font-size: 0.95rem;
+    margin: 18px 0;
+    font-size: 1rem;
     font-style: italic;
     color: #ff7fa6;
-    line-height: 1.6;
-    opacity: 0.9;
+    opacity: 0.95;
 }
 
 /* =========================
-   CONTADOR DISCRETO
+   CONTADOR
 ========================= */
 .time {
-    margin-top: 18px;
-    padding: 10px;
-    border-radius: 14px;
+    margin-top: 20px;
+    padding: 12px;
+    border-radius: 16px;
     background: #fff0f5;
     color: #ff7fa6;
     font-weight: 500;
-    font-size: 0.85rem;
+    font-size: 0.95rem;
 }
 
 /* =========================
@@ -136,21 +133,13 @@ p {
 }
 
 /* =========================
-   RESPONSIVE
-========================= */
-@media (max-width: 400px) {
-    .card {
-        width: 90%;
-    }
-}
-/* =====================
    HELLO KITTY SALUDO
-===================== */
+========================= */
 .kitty-saludo {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    width: 90px;
+    width: 100px;
     opacity: 0;
     transform: translateY(20px) scale(0.9);
     pointer-events: none;
@@ -161,7 +150,6 @@ p {
     width: 100%;
 }
 
-/* Animación aparecer / desaparecer */
 .kitty-saludo.mostrar {
     animation: saludo 4s ease-in-out forwards;
 }
@@ -171,11 +159,7 @@ p {
         opacity: 0;
         transform: translateY(20px) scale(0.9);
     }
-    20% {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
-    80% {
+    20%, 80% {
         opacity: 1;
         transform: translateY(0) scale(1);
     }
@@ -184,34 +168,17 @@ p {
         transform: translateY(20px) scale(0.9);
     }
 }
+
 /* =========================
-   AJUSTE PARA MÓVILES
+   AJUSTE EXTRA PARA MÓVIL
 ========================= */
 @media (max-width: 480px) {
+    body {
+        align-items: flex-start;
+    }
+
     .card {
-        width: 92vw;          /* casi toda la pantalla */
-        max-width: 380px;
-        padding: 32px 22px;
-        border-radius: 32px;
-    }
-
-    .kitty-svg {
-        width: 160px;         /* Kitty más grande */
-        margin-bottom: 18px;
-    }
-
-    h1 {
-        font-size: 1.5rem;    /* título más visible */
-    }
-
-    p,
-    .frase {
-        font-size: 1rem;      /* texto más legible */
-    }
-
-    .time {
-        font-size: 0.95rem;
-        padding: 12px;
+        margin-top: 40px;
     }
 }
 
