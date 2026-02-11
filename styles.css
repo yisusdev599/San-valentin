@@ -1,0 +1,186 @@
+/* =========================
+   RESET & FUENTE
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* =========================
+   FONDO K-AESTHETIC
+========================= */
+body {
+    background: linear-gradient(135deg, #fff1f5, #ffe3ea);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* =========================
+   TARJETA MINIMAL COREANA
+========================= */
+.card {
+    background: rgba(255, 255, 255, 0.95);
+    width: 320px;
+    padding: 30px 24px;
+    border-radius: 28px;
+    text-align: center;
+    box-shadow: 0 18px 36px rgba(0, 0, 0, 0.08);
+    animation: entrada 0.8s ease-out;
+    z-index: 2;
+}
+
+@keyframes entrada {
+    from {
+        transform: translateY(24px) scale(0.96);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+
+/* =========================
+   SVG (DETALLE TIERNO)
+========================= */
+.kitty-svg {
+    width: 130px;
+    margin: 0 auto 14px;
+    animation: flotar 4s ease-in-out infinite;
+}
+
+.kitty-svg img {
+    width: 100%;
+    display: block;
+}
+
+@keyframes flotar {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-6px);
+    }
+}
+
+/* =========================
+   TEXTOS K-STYLE
+========================= */
+h1 {
+    color: #ff7fa6;
+    font-size: 1.35rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+p {
+    color: #b5b1b1;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* FRASE ESPECIAL */
+.frase {
+    margin: 16px 0 18px;
+    font-size: 0.95rem;
+    font-style: italic;
+    color: #ff7fa6;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+/* =========================
+   CONTADOR DISCRETO
+========================= */
+.time {
+    margin-top: 18px;
+    padding: 10px;
+    border-radius: 14px;
+    background: #fff0f5;
+    color: #ff7fa6;
+    font-weight: 500;
+    font-size: 0.85rem;
+}
+
+/* =========================
+   PETALOS KOREAN STYLE
+========================= */
+.roses {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.rose {
+    position: absolute;
+    font-size: 14px;
+    opacity: 0.6;
+    animation: caer linear forwards;
+}
+
+@keyframes caer {
+    from {
+        transform: translateY(-10vh) rotate(0deg);
+        opacity: 0.6;
+    }
+    to {
+        transform: translateY(110vh) rotate(180deg);
+        opacity: 0;
+    }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 400px) {
+    .card {
+        width: 90%;
+    }
+}
+/* =====================
+   HELLO KITTY SALUDO
+===================== */
+.kitty-saludo {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 90px;
+    opacity: 0;
+    transform: translateY(20px) scale(0.9);
+    pointer-events: none;
+    z-index: 5;
+}
+
+.kitty-saludo img {
+    width: 100%;
+}
+
+/* Animación aparecer / desaparecer */
+.kitty-saludo.mostrar {
+    animation: saludo 4s ease-in-out forwards;
+}
+
+@keyframes saludo {
+    0% {
+        opacity: 0;
+        transform: translateY(20px) scale(0.9);
+    }
+    20% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+    80% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(20px) scale(0.9);
+    }
+}
