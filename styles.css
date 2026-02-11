@@ -184,3 +184,34 @@ p {
         transform: translateY(20px) scale(0.9);
     }
 }
+/* =========================
+   AJUSTE PARA MÓVILES
+========================= */
+@media (max-width: 480px) {
+    .card {
+        width: 92vw;          /* casi toda la pantalla */
+        max-width: 380px;
+        padding: 32px 22px;
+        border-radius: 32px;
+    }
+
+    .kitty-svg {
+        width: 160px;         /* Kitty más grande */
+        margin-bottom: 18px;
+    }
+
+    h1 {
+        font-size: 1.5rem;    /* título más visible */
+    }
+
+    p,
+    .frase {
+        font-size: 1rem;      /* texto más legible */
+    }
+
+    .time {
+        font-size: 0.95rem;
+        padding: 12px;
+    }
+}
+
